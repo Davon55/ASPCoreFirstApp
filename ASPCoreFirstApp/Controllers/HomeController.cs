@@ -1,4 +1,4 @@
-﻿using ASPCoreFirstApp.Models;
+﻿using ASPCoreFirstAPP.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ASPCoreFirstApp.Controllers
+namespace ASPCoreFirstAPP.Controllers
 {
     public class HomeController : Controller
     {

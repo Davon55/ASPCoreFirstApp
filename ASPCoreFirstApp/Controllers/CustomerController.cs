@@ -10,7 +10,7 @@ namespace ASPCoreFirstApp.Controllers
     public class CustomerController : Controller
     {
         List<CustomerModel> customers = new List<CustomerModel>();
-        public CustomerController ()
+        public CustomerController()
         {
             customers.Add(new CustomerModel(0, "Don", 42));
             customers.Add(new CustomerModel(1, "Melvin", 18));
@@ -18,7 +18,7 @@ namespace ASPCoreFirstApp.Controllers
             customers.Add(new CustomerModel(3, "Velma", 45));
             customers.Add(new CustomerModel(4, "Wendy", 33));
             customers.Add(new CustomerModel(5, "Kim", 90));
-          
+
         }
 
         public IActionResult Index()
