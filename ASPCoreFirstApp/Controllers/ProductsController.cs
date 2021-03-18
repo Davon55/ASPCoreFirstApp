@@ -31,6 +31,23 @@ namespace ASPCoreFirstAPP.Controllers
         {
             return View();
         }
-
+        public IActionResult ShowOneProduct(int id)
+        {
+            return View(repository.GetByProductId(id));
+        }
+        public IActionResult ShowEditForm(int id)
+        {
+            return View(repository.GetByProductId(id));
+        }
+        public IActionResult ProccessEdit(ProductModel product)
+        {
+            repository.Update(product);
+            return View("Index",repository.AllProducts());
+        }
+        public IActionResult DeleteById(ProductModel product)
+        {
+            repository.Delete(product);
+            return View("Index", repository.AllProducts());
+        }
     }
 }

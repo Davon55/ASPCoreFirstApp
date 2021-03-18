@@ -12,7 +12,7 @@ namespace ASPCoreFirstAPP.Services
         List<ProductModel> SearchProducts(string seartchItem);
         ProductModel GetByProductId(int Id);
         int Insert(ProductModel product);
-        bool Delete(ProductModel prodcut);
+        bool Delete(ProductModel product);
         int Update(ProductModel product);
 
     }
