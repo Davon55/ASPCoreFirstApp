@@ -1,0 +1,29 @@
+﻿@model ASPCoreFirstApp.Models.ProductModel
+
+
+
+<div id="prod-card-@Model.Id" class="card" style="width: 18rem; margin:5px;">
+
+
+    @{
+        //get just the first word of the item.name for searching purposes
+        var s = Model.Name;
+        //ternary operator - look it up
+        var firstWord = s.IndexOf(" ") > -1 ? s.Substring(0, s.IndexOf(" ")) : s;
+    }
+    @*@<img src="https://i.pravatar.cc/150?u=@item.Id" class="card-img-top" />*@
+    <img src="https://loremflickr.com/160/120/@firstWord?lock=@Model.Id" class="card-img-top" />
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+
+        <p class="card-text product-price">@Html.DisplayFor(modelItem => @Model.Price)</p>
+        <p class="card-text product-description">@Html.DisplayFor(modelItem => Model.Description)</p>
+        <a href="/products/ShowOneProduct/@Model.Id" class="btn btn-primary">Show Details</a>
+        <!-- <a href="/products/ShowEditForm/@Model.Id" class="btn btn-primary">Edit</a> -->
+        <!-- Button trigger modal -->
+        <button type="button" data-id="@Model.Id" class="btn btn-primary edit-product-button" data-toggle="modal" data-target="#editModal">
+            Edit
+        </button>
+        <a href="/products/DeleteById/@Model.Id" class="btn btn-primary">Delete</a>
+    </div>
+</div>
